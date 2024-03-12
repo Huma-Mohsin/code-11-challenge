@@ -1,0 +1,25 @@
+const isUsernameTaken: This declares a constant variable isUsernameTaken, which will store a boolean value indicating whether the current newUser is already taken or not.
+
+current_users.some((user) => user.toLowerCase() === newUser.toLowerCase()): This line uses the some method to iterate over each element of the current_users array. The some method checks if at least one element in the array satisfies the condition specified by the callback function. In this case, the callback function compares each element (user) of current_users with the newUser after converting both to lowercase. This ensures that the comparison is case-insensitive. If any element in current_users matches newUser (case-insensitive), the some method returns true; otherwise, it returns false. The result is stored in the isUsernameTaken variable.
+
+typescript
+Copy code
+    if (isUsernameTaken) {
+        console.log(`Sorry, the username '${newUser}' is already taken. Please enter a new username.`);
+        console.log("the person will need to enter a new username. ")
+    } else {
+        console.log(`The username '${newUser}' is available.`);
+    }
+Here's the breakdown of the code inside the if...else block:
+
+if (isUsernameTaken) {: This line checks if the isUsernameTaken variable is true, indicating that the current newUser is already taken.
+
+console.log(Sorry, the username '${newUser}' is already taken. Please enter a new username.);: If the isUsernameTaken is true, this line prints a message indicating that the username is already taken, prompting the user to enter a new username. It uses string interpolation to include the newUser variable in the message.
+
+console.log("the person will need to enter a new username. "): This line provides an additional message indicating that the person needs to enter a new username. It's a helpful note for the user.
+
+} else {: This line signifies the beginning of the else block, which executes if isUsernameTaken is false, indicating that the current newUser is available.
+
+console.log(The username '${newUser}' is available.);: Inside the else block, this line prints a message indicating that the username is available. Similar to before, it uses string interpolation to include the newUser variable in the message.
+
+Overall, these lines of code handle the logic for checking if a username is already taken and printing the appropriate message based on the result.
